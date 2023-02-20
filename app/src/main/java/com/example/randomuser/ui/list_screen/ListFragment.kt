@@ -1,13 +1,12 @@
 package com.example.randomuser.ui.list_screen
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.view.doOnPreDraw
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.randomuser.R
 import com.example.randomuser.databinding.FragmentListBinding
@@ -21,8 +20,6 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class ListFragment : BaseFragment(), UserListAdapter.Listener {
 
-    //Global
-    private val TAG = ListFragment::class.java.simpleName
     private lateinit var binding: FragmentListBinding
     private val viewModel by viewModels<ListViewModel>()
     private var isLoading = false
@@ -86,7 +83,10 @@ class ListFragment : BaseFragment(), UserListAdapter.Listener {
     }
 
     override fun onViewProfileClicked(user: User) {
-
+        findNavController().navigate(
+            ListFragmentDirections.navigateFromListScreenToDetailScreen(
+                user
+            )
+        )
     }
-
 }

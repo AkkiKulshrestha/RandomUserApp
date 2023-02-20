@@ -17,8 +17,6 @@ class ListViewModel @Inject constructor(
     private val repository: Repository
 ) : ViewModel() {
 
-    // Global
-    private val TAG = ListViewModel::class.java.simpleName
     private val _users = MutableLiveData<Resource<List<User>>>()
     val users: LiveData<Resource<List<User>>> = _users
 

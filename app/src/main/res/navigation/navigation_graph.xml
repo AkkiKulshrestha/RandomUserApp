@@ -9,21 +9,22 @@
         android:name="com.example.randomuser.ui.list_screen.ListFragment"
         android:label="ListFragment"
         tools:layout="@layout/fragment_list">
-<!--        <action-->
-<!--            android:id="@+id/navigateListToDetails"-->
-<!--            app:destination="@id/detailsFragment"-->
-<!--            app:enterAnim="@anim/slide_in_right"-->
-<!--            app:exitAnim="@anim/slide_out_left"-->
-<!--            app:popEnterAnim="@anim/slide_in_left"-->
-<!--            app:popExitAnim="@anim/slide_out_right" />-->
+        <action
+            android:id="@+id/navigate_from_list_screen_to_detail_screen"
+            app:destination="@id/detailsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpToInclusive="true" />
     </fragment>
-<!--    <fragment-->
-<!--        android:id="@+id/detailsFragment"-->
-<!--        android:name="com.example.randomuser.ui.details_screen.DetailsFragment"-->
-<!--        android:label="fragment_details"-->
-<!--        tools:layout="@layout/fragment_details">-->
-<!--        <argument-->
-<!--            android:name="user"-->
-<!--            app:argType="com.example.randomuser.models.ShortContent" />-->
-<!--    </fragment>-->
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.example.randomuser.ui.details_screen.DetailsFragment"
+        android:label="fragment_details"
+        tools:layout="@layout/fragment_details">
+        <argument
+            android:name="user"
+            app:argType="com.example.randomuser.model.User" />
+    </fragment>
 </navigation>

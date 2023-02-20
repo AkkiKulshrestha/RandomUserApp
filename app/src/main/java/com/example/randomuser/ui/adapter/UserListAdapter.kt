@@ -1,6 +1,5 @@
 package com.example.randomuser.ui.adapter
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -85,6 +84,10 @@ class UserListAdapter : RecyclerView.Adapter<UserListAdapter.Holder>() {
                     .placeholder(R.drawable.ic_girl_profile)
                     .error(R.drawable.ic_girl_profile)
                     .into(binding.profileImage)
+
+                binding.lvMain.setOnClickListener {
+                    listener?.onViewProfileClicked(user)
+                }
             }
         }
 
