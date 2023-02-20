@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Random User</string>
+
+    <string name="label_no_network_connection">No Network Connection</string>
+    <string name="view_profile">View Profile</string>
+
+</resources>
